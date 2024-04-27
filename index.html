@@ -113,6 +113,39 @@
           font-weight: 200;
         }
         .thanks {text-align: right; font-size: small;}
+
+        .presenters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the rows */
+        }
+
+        .presenters div {
+            width: 25%; /* Each presenter takes up 25% of the container */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .presenters img {
+            width: auto;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .presenters .details {
+            font-size: 14px;
+        }
+
+        .presenters .details a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .presenters .details p {
+            margin-top: 5px;
+            color: #777;
+        }
         
       </style>
       
@@ -131,7 +164,6 @@
                     <h5>June 16, 2026</h5>
                     <h5>1400 - 1730 (CST)</h5>
                     
-                    <h2>Overview</h2>
                     <p> 
                         Welcome to our NAACL 2024 tutorial on "Text to Context: Contextualizing Language with Humans, Groups, and Communities for Socially Aware NLP". 
                     </p>
@@ -261,52 +293,79 @@
                     </p>
 
                     <h2>People</h2>
-                    <!-- Include Image in a standard size within a circle of set radius, along with their name (hyperlinked) and their affiliation in the bottom of their pictures -->
-
-                    <div>
-                        <img src="assets/people/sgiorgi.jpg" alt="presenter-sal" style="width:100px;height:100px;border-radius:50%;">
-                        <a href="https://sjgiorgi.github.io/">Salvatore Giorgi</a>
+                    <!-- Include Image in a standard size within a circle of set radius, along with their name (hyperlinked) and their affiliation in the bottom of their pictures
+                    Ensure to preserve the aspect ratio of the images through resizing only to a constant height and letting the width to be resized based on the image's aspect ratio. Write a javascript if this needs to be implemented
+                    The images should be displayed in two rows with the first row containing the first 4 presenters and the second row containing the remaining presenters
+                    -->
+                    
+                    <div class="presenters">
+                        <div>
+                            <img src="assets/people/sgiorgi.jpg" alt="presenter-sal">
+                            <div class="details">
+                                <a href="https://sjgiorgi.github.io/">Salvatore Giorgi</a>
+                                <p>Affiliation</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="assets/people/jsedoc.jpg" alt="presenter-joao">
+                            <div class="details">
+                                <a href="https://www.stern.nyu.edu/faculty/bio/joao-sedoc">João Sedoc</a>
+                                <p>Affiliation</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="assets/people/hschwartz.jpg" alt="presenter-andy">
+                            <div class="details">
+                                <a href="https://www3.cs.stonybrook.edu/~has">H. Andrew Schwartz</a>
+                                <p>Affiliation</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="assets/people/rboyd.jpg" alt="presenter-ryan">
+                            <div class="details">
+                                <a href="https://www.ryanboyd.io/">Ryan L Boyd</a>
+                                <p>Affiliation</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="assets/people/aganesan.jpg" alt="presenter-adi">
+                            <div class="details">
+                                <a href="https://adithya8.github.io">Adithya V Ganesan</a>
+                                <p>Affiliation</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="assets/people/smangalik.jpg" alt="presenter-sid">
+                            <div class="details">
+                                <a href="https://smangalik.github.io/">Siddharth Mangalik</a>
+                                <p>Affiliation</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="assets/people/vvaradarajan.jpg" alt="presenter-vasudha">
+                            <div class="details">
+                                <a href="https://vasevarad.github.io/">Vasudha Varadarajan</a>
+                                <p>Affiliation</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="assets/people/nsoni.jpg" alt="presenter-nikita">
+                            <div class="details">
+                                <a href="https://www3.cs.stonybrook.edu/~nisoni/">Nikita Soni</a>
+                                <p>Affiliation</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="assets/people/sjuhng.jpg" alt="presenter-swanie">
+                            <div class="details">
+                                <a href="https://swaniejuhng.github.io/">Swanie Juhng</a>
+                                <p>Affiliation</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div>
-                        <img src="assets/people/jsedoc.jpg" alt="presenter-joao" style="width:100px;height:100px;border-radius:50%;">
-                        <a href="https://www.stern.nyu.edu/faculty/bio/joao-sedoc">João Sedoc</a>
-                    </div>
 
-                    <div>
-                        <img src="assets/people/hschwartz.jpg" alt="presenter-andy" style="width:100px;height:100px;border-radius:50%;">
-                        <a href="https://www3.cs.stonybrook.edu/~has">H. Andrew Schwartz</a>
-                    </div>
-
-                    <div>
-                        <img src="assets/people/rboyd.jpg" alt="presenter-ryan" style="width:100px;height:100px;border-radius:50%;">
-                        <a href="https://www.ryanboyd.io/">Ryan L Boyd</a>
-                    </div>
-
-                    <div>
-                        <img src="assets/people/aganesan.jpg" alt="presenter-adi" style="width:100px;height:100px;border-radius:50%;">
-                        <a href="https://adithya8.github.io">Adithya V Ganesan</a>
-                    </div>
-
-                    <div>
-                        <img src="assets/people/smangalik.jpg" alt="presenter-sid" style="width:100px;height:100px;border-radius:50%;">
-                        <a href="https://smangalik.github.io/">Siddharth Mangalik</a>
-                    </div>
-
-                    <div>
-                        <img src="assets/people/vvaradarajan.jpg" alt="presenter-vasudha" style="width:100px;height:100px;border-radius:50%;">
-                        <a href="https://vasevarad.github.io/">Vasudha Varadarajan</a>
-                    </div>
-
-                    <div>
-                        <img src="assets/people/nsoni.jpg" alt="presenter-nikita" style="width:100px;height:100px;border-radius:50%;">
-                        <a href="https://www3.cs.stonybrook.edu/~nisoni/">Nikita Soni</a>
-                    </div>
-
-                    <div>
-                        <img src="assets/people/sjuhng.jpg" alt="presenter-swanie" style="width:100px;height:100px;border-radius:50%;">
-                        <a href="https://swaniejuhng.github.io/">Swanie Juhng</a>
-                    </div>
+                
                 </div>
             </div>
         </div>
