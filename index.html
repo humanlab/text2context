@@ -56,39 +56,40 @@
             color: grey 
             }
             
-            .presenters {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                justify-content: center !important;
+            .card {
+                margin-bottom: 20px;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
             }
             
-            .presenters div {
-                width: 25% !important;
-                text-align: center !important;
-                margin-bottom: 20px !important;
+            .card:hover {
+                transform: translateY(-5px);
             }
             
-            .presenters img {
-                width: auto !important;
-                height: 100px !important;
-                border-radius: 50% !important;
-                margin-bottom: 10px !important;
+            .card-img-top {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+                margin-top: -75px;
+                position: relative;
+                z-index: 1;
             }
             
-            .presenters .details {
-                font-size: 14px !important;
-                text-align: center !important;
+            .card-body {
+                padding-top: 75px;
             }
             
-            .presenters .details a {
-                text-decoration: none !important;
-                color: #333 !important;
+            .card-title {
+                font-size: 20px;
+                margin-bottom: 10px;
             }
             
-            .presenters .details p {
-                margin-top: 5px !important;
-                color: #777 !important;
-            }            
+            .card-text {
+                color: #777;
+            }
+                        
         </style>
             
     </head>
@@ -243,75 +244,95 @@
                     Ensure to preserve the aspect ratio of the images through resizing only to a constant height and letting the width to be resized based on the image's aspect ratio. Write a javascript if this needs to be implemented
                     The images should be displayed in two rows with the first row containing the first 4 presenters and the second row containing the remaining presenters
                     -->
-                    
-                    <div class="presenters">
-                        <h2>People</h2>
-                        <div>
-                            <img src="assets/people/sgiorgi.jpg" alt="presenter-sal">
-                            <div class="details">
-                                <a href="https://sjgiorgi.github.io/">Salvatore Giorgi</a>
-                                <p>University Of Pennsylvania & National Institute of Health</p>
+                    <div class="container">
+                        <h2 class="text-center">People</h2>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <img src="assets/people/sgiorgi.jpg" alt="Salvatore Giorgi" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><a href="https://sjgiorgi.github.io/">Salvatore Giorgi</a></h4>
+                                        <p class="card-text">University Of Pennsylvania & National Institute of Health</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <img src="assets/people/jsedoc.jpg" alt="João Sedoc" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><a href="https://www.stern.nyu.edu/faculty/bio/joao-sedoc">João Sedoc</a></h4>
+                                        <p class="card-text">New York University, USA</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Repeat the above card structure for each presenter -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <img src="assets/people/hschwartz.jpg" alt="H. Andrew Schwartz" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><a href="https://www3.cs.stonybrook.edu/~has">H. Andrew Schwartz</a></h4>
+                                        <p class="card-text">Stony Brook University, USA</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <img src="assets/people/rboyd.jpg" alt="Ryan L Boyd" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><a href="https://www.ryanboyd.io/">Ryan L Boyd</a></h4>
+                                        <p class="card-text">Stony Brook University, USA</p>
+                                        </div> 
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <img src="assets/people/jsedoc.jpg" alt="presenter-joao">
-                            <div class="details">
-                                <a href="https://www.stern.nyu.edu/faculty/bio/joao-sedoc">João Sedoc</a>
-                                <p>New York University, USA</p>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <img src="assets/people/aganesan.jpg" alt="Adithya V Ganesan" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><a href="https://adithya8.github.io">Adithya V Ganesan</a></h4>
+                                        <p class="card-text">Stony Brook University, USA</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <img src="assets/people/hschwartz.jpg" alt="presenter-andy">
-                            <div class="details">
-                                <a href="https://www3.cs.stonybrook.edu/~has">H. Andrew Schwartz</a>
-                                <p>Stony Brook University, USA</p>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <img src="assets/people/smangalik.jpg" alt="Siddharth Mangalik" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><a href="https://smangalik.github.io/">Siddharth Mangalik</a></h4>
+                                        <p class="card-text">Stony Brook University, USA</p>
+                                    </div>  
+                                </div>  
                             </div>
-                        </div>
-                        <div>
-                            <img src="assets/people/rboyd.jpg" alt="presenter-ryan">
-                            <div class="details">
-                                <a href="https://www.ryanboyd.io/">Ryan L Boyd</a>
-                                <p>Stony Brook University, USA</p>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <img src="assets/people/vvaradarajan.jpg" alt="Vasudha Varadarajan" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><a href="https://vasevarad.github.io/">Vasudha Varadarajan</a></h4>
+                                        <p class="card-text">Stony Brook University, USA</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <img src="assets/people/aganesan.jpg" alt="presenter-adi">
-                            <div class="details">
-                                <a href="https://adithya8.github.io">Adithya V Ganesan</a>
-                                <p>Stony Brook University, USA</p>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <img src="assets/people/nsoni.jpg" alt="Nikita Soni" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><a href="https://www3.cs.stonybrook.edu/~nisoni/">Nikita Soni</a></h4>
+                                        <p class="card-text">Stony Brook University, USA</p>
+                                    </div>
+                                </div> 
                             </div>
-                        </div>
-                        <div>
-                            <img src="assets/people/smangalik.jpg" alt="presenter-sid">
-                            <div class="details">
-                                <a href="https://smangalik.github.io/">Siddharth Mangalik</a>
-                                <p>Stony Brook University, USA</p>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="assets/people/vvaradarajan.jpg" alt="presenter-vasudha">
-                            <div class="details">
-                                <a href="https://vasevarad.github.io/">Vasudha Varadarajan</a>
-                                <p>Stony Brook University, USA</p>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="assets/people/nsoni.jpg" alt="presenter-nikita">
-                            <div class="details">
-                                <a href="https://www3.cs.stonybrook.edu/~nisoni/">Nikita Soni</a>
-                                <p>Stony Brook University, USA</p>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="assets/people/sjuhng.jpg" alt="presenter-swanie">
-                            <div class="details">
-                                <a href="https://swaniejuhng.github.io/">Swanie Juhng</a>
-                                <p>Stony Brook University, USA</p>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="card">
+                                    <img src="assets/people/sjuhng.jpg" alt="Swanie Juhng" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><a href="https://swaniejuhng.github.io/">Swanie Juhng</a></h4>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-
+                    
                 
                 </div>
             </div>
