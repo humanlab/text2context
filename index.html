@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Text2Context</title>
+  <title>Text2Context Tutorial</title>
   
   <!-- Bootstrap -->
   <!-- Latest compiled and minified CSS -->
@@ -19,7 +19,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-  <base target="_blank">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,6 +26,24 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- The following script ensures that redirects to sections within the webpage don't open in a new tab, while hyperlinks like colab, slides or personal websites open in a new tab-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var links = document.querySelectorAll("a");
+    
+            links.forEach(function(link) {
+                if (link.getAttribute("href").startsWith("#")) {
+                    // Links pointing to different sections within the same page
+                    link.removeAttribute("target"); // Remove target attribute
+                } else {
+                    // Other links, such as presenter's hyperlink or slides/Colab link
+                    link.setAttribute("target", "_blank"); // Set target to _blank
+                }
+            });
+        });
+    </script>
+
     
     <style type="text/css">
       body { 
@@ -39,81 +56,6 @@
         color: grey 
       }
       
-      li { margin: 10px 0; }
-      
-      .top-buffer { margin-top: 40px; font-family: 'Lato', sans-serif;}
-      .year { margin-top: 30px; margin-bottom: 10px; }
-      .bottom-buffer { margin-bottom: 40px; }
-      
-      #pubs li { margin: 15px 0px; }
-      
-      @media (min-width: 992px) {
-        .sidebar {
-          position: fixed;
-        }
-        
-        #portrait {
-          width: 50%;
-        }
-      }
-      
-      @media (max-width: 992px) {
-        .sidebar {
-          padding-bottom: 5%;	
-          margin: auto;
-          text-align: center;
-        }
-        
-        #portrait {
-          width: 25%;
-        }
-      }
-      
-      .updates{
-        background: white;
-        text-align: left;
-        font-size: 12pt;
-        line-height: 7.5mm;
-      }
-      
-      .updates-li{
-        background: rgba(245, 245, 245, 0.493);
-        text-align: left;
-        font-size: 12pt;
-        line-height: 7.5mm;
-        overflow: scroll;
-        height: 120px;
-        padding-bottom: 1%;
-        font-family: 'Raleway', sans-serif;
-        font-weight: 300;
-      }
-      .bio {
-        background: white;
-        text-align: left;
-        font-size: 12pt;
-        line-height: 7.5mm;
-        font-family: 'Raleway', sans-serif;
-        font-weight: 300;
-      }
-      #pubs {
-        font-family: 'Raleway', sans-serif; 
-        font-weight: 200;
-        font-size: 12pt;}
-        #pubs span:hover, #pubs span:focus{
-          font-size: 10pt;
-          transition: 0.25s;
-        }
-        .paper-name{
-          font-family: 'Raleway', sans-serif;
-          font-weight: bold;
-        }
-        .header-name{
-          font-size: 35pt;
-          font-family: 'Work Sans', sans-serif;
-          font-weight: 200;
-        }
-        .thanks {text-align: right; font-size: small;}
-
         .presenters {
             display: flex;
             flex-wrap: wrap;
@@ -172,12 +114,13 @@
                         The tutorial will introduce research that has successfully integrated personal and social factors into traditional NLP as a foundation for cutting-edge research in the field. Unique aspects of this tutorial will include 1. interdisciplinary methods woven together into a coherent framework for human-centered NLP, 2. theory and domain expertise from an interdisciplinary team of presenters, and 3. hands-on demonstrations that facilitate immediate uptake and application by attendees.
                     </p>
 
+                    <hr>
+
                     <div class="schedule">
                         <h2>Schedule</h2>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Session Number</th>
                                     <th>Time</th>
                                     <th>Session Title</th>
                                     <th>Materials</th>
@@ -185,56 +128,49 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
                                     <td>1400 - 1415</td>
                                     <td><a href="#session1">Introduction to Socially Aware NLP</a></td>
-                                    <td><a href="#">Slides</a>, <a href="#">Colab Notebook</a></td>
+                                    <td><a href="#">Slides</a>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
                                     <td>1415 - 1455</td>
                                     <td><a href="#session2">Personal Context in NLP</a></td>
                                     <td><a href="#">Slides</a>, <a href="#">Colab Notebook</a></td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
                                     <td>1455 - 1530</td>
                                     <td><a href="#session3">Individuals With Agents</a></td>
                                     <td><a href="#">Slides</a>, <a href="#">Colab Notebook</a></td>
                                 </tr>
                                 <tr>
-                                    <td>-</td>
                                     <td>1530 - 1600</td>
                                     <td>Break</td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>4</td>
                                     <td>1600 - 1635</td>
                                     <td><a href="#session4">Group Context in NLP</a></td>
                                     <td><a href="#">Slides</a>, <a href="#">Colab Notebook</a></td>
                                 </tr>
                                 <tr>
-                                    <td>5</td>
                                     <td>1635 - 1715</td>
                                     <td><a href="#session5">Community Context in NLP</a></td>
                                     <td><a href="#">Slides</a>, <a href="#">Colab Notebook</a></td>
                                 </tr>
                                 <tr>
-                                    <td>6</td>
                                     <td>1715 - 1730</td>
                                     <td><a href="#session6">Closing Note</a></td>
-                                    <td><a href="#">Slides</a>, <a href="#">Colab Notebook</a></td>
+                                    <td><a href="#">Slides</a>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    
+                    </div>   
                     
                     <hr>
+
                     <div class="sessions">
-                        <h2>Session Details</h2>
-                        <h3 id="session1">Introduction to Socially Aware NLP</h3>
+                        <h2>Session Overview</h2>
+                        <h3 id="session1">1. Introduction to Socially Aware NLP</h3>
                         <p>
                             The 3 hour tutorial will begin with a brief overview of the entire session organized from the individual to the societal levels of context. 
                             We will also introduce the key concepts in behavioral and social science that motivate the techniques that will be discussed in the subsequent sections.
@@ -246,7 +182,7 @@
                             <b>Materials:</b> <a href="">Slides</a>
                         </p>
                     
-                        <h3 id="session2">Personal Context in NLP</h3>
+                        <h3 id="session2">2. Personal Context in NLP</h3>
                         <p>
                             In this session, we will review the methods for producing user representation from language, ranging from simple N gram features to advanced techniques such as Latent Dirichlet Allocation, Word2Vec, and Transformer models. 
                             These language-based user representations become much effective when integrated with user factors for analyses. We will showcase different user factor adaptation methods for merging human and social factors with language representations. 
@@ -259,7 +195,7 @@
                             <b>Materials:</b> <a href="">Slides</a>
                         </p>
 
-                        <h3 id="session3">Individuals With Agents</h3>
+                        <h3 id="session3">3. Individuals With Agents</h3>
                         <p>
                             This session will begin by considering the "generator" of language and its mathematical formulation. Next, we will look at how <i>individuals</i> or personas make their way into dialogue and conversational AI systems. 
                             Finally, we introduce metrics aimed at assessing conversational AI on an individual level and how they contrast with the more traditional automatic dialog metrics.
@@ -271,7 +207,7 @@
                             <b>Materials:</b> <a href="">Slides</a>
                         </p>
 
-                        <h3 id="session4">Group Context in NLP</h3>
+                        <h3 id="session4">4. Group Context in NLP</h3>
                         <p>
                             We will go over the methods that place emphasis on treating individuals and groups as interactive entities, with the individual's interactions within a group adding context to documents. 
                             Drawing inspiration from adjacent fields, particularly computational social science, we will show how to analyze the language of user-associated groups, unveil valuable insights into the context of an individual, the evolving dynamics of group language usage over time, and its influence on individual language patterns. 
@@ -284,7 +220,7 @@
                             <b>Materials:</b> <a href="">Slides</a>
                         </p>
 
-                        <h3 id="session5">Community Context in NLP</h3>
+                        <h3 id="session5">5. Community Context in NLP</h3>
                         <p>
                             This tutorial session will cover the basics of creating language estimates of spatial communities (e.g., U.S. states or provinces in China). 
                             We will cover topics such as aggregation, as in how to move from documents to communities \emph{through} people, selection biases, ecological fallacies (i.e., language patterns at the individual level do not always hold at the community level), and cultural considerations. 
@@ -296,7 +232,7 @@
                         <p>
                             <b>Materials:</b> <a href="">Slides</a>
                         </p>
-                        <h3 id="session6">Closing Note</h3>
+                        <h3 id="session6">6. Closing Note</h3>
                         We will end the tutorial by briefly summarizing the topics covered across all the sessions, distinguishing the situations for which methods are appropriate, concluding with a perspective on the future of human-centered NLP.
                         <p>
                             <b>Presenters:</b> H. Andrew Schwartz
