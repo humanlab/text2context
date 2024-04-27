@@ -1,97 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Text2Context Tutorial</title>
-  
-  <!-- Bootstrap -->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;1,100;1,200&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Raleway:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200;1,300&display=swap" rel="stylesheet"> 
-  
-  
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Text2Context Tutorial</title>
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;1,100;1,200&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Raleway:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200;1,300&display=swap" rel="stylesheet"> 
 
-    <!-- The following script ensures that redirects to sections within the webpage don't open in a new tab, while hyperlinks like colab, slides or personal websites open in a new tab-->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var links = document.querySelectorAll("a");
-    
-            links.forEach(function(link) {
-                if (link.getAttribute("href").startsWith("#")) {
-                    // Links pointing to different sections within the same page
-                    link.removeAttribute("target"); // Remove target attribute
-                } else {
-                    // Other links, such as presenter's hyperlink or slides/Colab link
-                    link.setAttribute("target", "_blank"); // Set target to _blank
-                }
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- The following script ensures that redirects to sections within the webpage don't open in a new tab, while hyperlinks like colab, slides or personal websites open in a new tab-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var links = document.querySelectorAll("a");
+
+                links.forEach(function(link) {
+                    if (link.getAttribute("href").startsWith("#")) {
+                        // Links pointing to different sections within the same page
+                        link.removeAttribute("target"); // Remove target attribute
+                    } else {
+                        // Other links, such as presenter's hyperlink or slides/Colab link
+                        link.setAttribute("target", "_blank"); // Set target to _blank
+                    }
+                });
             });
-        });
-    </script>
+        </script>
 
-    
-    <style type="text/css">
-      body { 
-        font-family: "Helvetica"; 
-        margin-top: 5%;
-      }
-      
-      h5 {
-        font-size: 14px; 
-        color: grey 
-      }
-      
-        .presenters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Center the rows */
-        }
 
-        .presenters div {
-            width: 25%; /* Each presenter takes up 25% of the container */
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .presenters img {
-            width: auto;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .presenters .details {
-            font-size: 14px;
-            text-align: center; /* Center the text */
-        }
-
-        .presenters .details a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .presenters .details p {
-            margin-top: 5px;
-            color: #777;
-        }
-        
-      </style>
-      
+        <style type="text/css">
+            body { 
+            font-family: "Helvetica"; 
+            margin-top: 5%;
+            }
+            
+            h5 {
+            font-size: 14px; 
+            color: grey 
+            }
+            
+            .presenters {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+            }
+            
+            .presenters div {
+                width: 25% !important;
+                text-align: center !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .presenters img {
+                width: auto !important;
+                height: 100px !important;
+                border-radius: 50% !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .presenters .details {
+                font-size: 14px !important;
+                text-align: center !important;
+            }
+            
+            .presenters .details a {
+                text-decoration: none !important;
+                color: #333 !important;
+            }
+            
+            .presenters .details p {
+                margin-top: 5px !important;
+                color: #777 !important;
+            }            
+        </style>
+            
     </head>
     
     <body>
