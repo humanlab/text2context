@@ -1,97 +1,315 @@
-<!-- This is a webpage for NAACL 2024 tutorial -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Text2Context</title>
-</head>
-<body>
-    <!-- This should first give an over view of the tutorial and have a contents section  -->
-    <h1>Welcome to Text2Context</h1>
-    <p>This is a tutorial for NAACL 2024. </p>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Text2Context</title>
+  
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;1,100;1,200&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Raleway:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200;1,300&display=swap" rel="stylesheet"> 
+  
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <base target="_blank">
 
-    <h2>Contents</h2>
-    <ul>
-        <!-- This should consist of Overview, Sections (which should have a  sublist within), and People. All should hyperlink to the part of the webpage below-->
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#sections">Sections</a></li>
-            <ul>
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 3</a></li>
-                <li><a href="#section4">Section 4</a></li>
-            </ul>
-        <li><a href="#people">People</a></li>
-    </ul>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style type="text/css">
+      body { 
+        font-family: "Helvetica"; 
+        margin-top: 5%;
+      }
+      
+      h5 {
+        font-size: 14px; 
+        color: grey 
+      }
+      
+      li { margin: 10px 0; }
+      
+      .top-buffer { margin-top: 40px; font-family: 'Lato', sans-serif;}
+      .year { margin-top: 30px; margin-bottom: 10px; }
+      .bottom-buffer { margin-bottom: 40px; }
+      
+      #pubs li { margin: 15px 0px; }
+      
+      @media (min-width: 992px) {
+        .sidebar {
+          position: fixed;
+        }
+        
+        #portrait {
+          width: 50%;
+        }
+      }
+      
+      @media (max-width: 992px) {
+        .sidebar {
+          padding-bottom: 5%;	
+          margin: auto;
+          text-align: center;
+        }
+        
+        #portrait {
+          width: 25%;
+        }
+      }
+      
+      .updates{
+        background: white;
+        text-align: left;
+        font-size: 12pt;
+        line-height: 7.5mm;
+      }
+      
+      .updates-li{
+        background: rgba(245, 245, 245, 0.493);
+        text-align: left;
+        font-size: 12pt;
+        line-height: 7.5mm;
+        overflow: scroll;
+        height: 120px;
+        padding-bottom: 1%;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+      }
+      .bio {
+        background: white;
+        text-align: left;
+        font-size: 12pt;
+        line-height: 7.5mm;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+      }
+      #pubs {
+        font-family: 'Raleway', sans-serif; 
+        font-weight: 200;
+        font-size: 12pt;}
+        #pubs span:hover, #pubs span:focus{
+          font-size: 10pt;
+          transition: 0.25s;
+        }
+        .paper-name{
+          font-family: 'Raleway', sans-serif;
+          font-weight: bold;
+        }
+        .header-name{
+          font-size: 35pt;
+          font-family: 'Work Sans', sans-serif;
+          font-weight: 200;
+        }
+        .thanks {text-align: right; font-size: small;}
+        
+      </style>
+      
+    </head>
+    
+    <body>
+        <!-- This is a webpage for NAACL tutorial on "Text to Context: Contextualizing Language with Humans, Groups, and Communities for Socially Aware NLP".
+        This webpage should contain overview of what the tutorial is about, when & where it is taking place, schedule along with short note about the 5 sessions, and finally the presenters.
+        Each session info should have the title of the session, presenter names, session overview describing the session, and links to useful materials (link to slides, google colab etc) -->
 
-    <!-- This should give an overview of the tutorial -->
-    <h2 id="overview">Overview</h2>
-    <p>This tutorial will cover the following topics:</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="header-name">Text to Context: Contextualizing Language with Humans, Groups, and Communities for Socially Aware NLP</h1>
+                    <h5>NAACL 2024 Tutorial, Mexico City</h5>
+                    <h5>June 16, 2026</h5>
+                    <h5>1400 - 1730 (CST)</h5>
+                    
+                    <h2>Overview</h2>
+                    <p> 
+                        Welcome to our NAACL 2024 tutorial on "Text to Context: Contextualizing Language with Humans, Groups, and Communities for Socially Aware NLP". 
+                    </p>
+                    <p>
+                        The tutorial will introduce research that has successfully integrated personal and social factors into traditional NLP as a foundation for cutting-edge research in the field. Unique aspects of this tutorial will include 1. interdisciplinary methods woven together into a coherent framework for human-centered NLP, 2. theory and domain expertise from an interdisciplinary team of presenters, and 3. hands-on demonstrations that facilitate immediate uptake and application by attendees.
+                    </p>
 
-    <!-- This should give an overview of the sections -->
-    <h2 id="sections">Sections</h2>
-    <p>This tutorial will be divided into the following sections:</p>
+                    <h2>Schedule</h2>
+                    <!--Enclose the schedule in a table 7x3 table, with column headers as Session number, Time, Session title
+                    Each session title should hyperlink to the session overview in the next section -->
 
-    <h3 id="section1">Section 1</h3>
-    <p>This section will cover the following topics:</p>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Session Number</th>
+                                <th>Time</th>
+                                <th>Session Title</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1400 - 1415</td>
+                                <td><a href="#session1">Introduction to Socially Aware NLP</a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>1415 - 1455</td>
+                                <td><a href="#session2">Personal Context in NLP</a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>1455 - 1530</td>
+                                <td><a href="#session3">Individuals With Agents</a></td>
+                            </tr>
+                            <!-- Include 30 minute break here-->
+                            <tr>
+                                <td>-</td>
+                                <td>1530 - 1600</td>
+                                <td>Break</td>
+                            <tr>
+                                <td>4</td>
+                                <td>1600 - 1635</td>
+                                <td><a href="#session4">Group Context in NLP</a></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>1635 - 1715</td>
+                                <td><a href="#session5">Community Context in NLP</a></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>1715 - 1730</td>
+                                <td><a href="#session6">Closing Note</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    <h3 id="section2">Section 2</h3>
-    <p>This section will cover the following topics:</p>
+                    
 
-    <h3 id="section3">Section 3</h3>
-    <p>This section will cover the following topics:</p>
+                    <h2 id="session1">Introduction to Socially Aware NLP</h2>
+                    <p>
+                        The 3 hour tutorial will begin with a brief overview of the entire session organized from the individual to the societal levels of context. 
+                        We will also introduce the key concepts in behavioral and social science that motivate the techniques that will be discussed in the subsequent sections.
+                    </p>
+                    <p>
+                        <b>Presenters:</b> H. Andrew Schwartz
+                    </p>
+                    <p>
+                        <b>Materials:</b> <a href="">Slides</a>
+                    </p>
+                    
+                    <h2 id="session2">Personal Context in NLP</h2>
+                    <p>
+                        In this session, we will review the methods for producing user representation from language, ranging from simple N gram features to advanced techniques such as Latent Dirichlet Allocation, Word2Vec, and Transformer models. 
+                        These language-based user representations become much effective when integrated with user factors for analyses. We will showcase different user factor adaptation methods for merging human and social factors with language representations. 
+                        While these methods produce user representations by taking a person's full picture into account, it is also pivotal to preserve the privacy of the individuals. Thus we will also review works demonstrating the successful implementation of human-level NLP systems incorporating differential privacy to ensure secure and privacy-preserving NLP practices
+                    </p>
+                    <p>
+                        <b>Presenters:</b> H. Andrew Schwartz, Adithya V Ganesan, Swanie Juhng
+                    </p>
+                    <p>
+                        <b>Materials:</b> <a href="">Slides</a>
+                    </p>
 
-    <h3 id="section4">Section 4</h3>
-    <p>This section will cover the following topics:</p>
+                    <h2 id="session3">Individuals With Agents</h2>
+                    <p>
+                        This session will begin by considering the "generator" of language and its mathematical formulation. Next, we will look at how <i>individuals</i> or personas make their way into dialogue and conversational AI systems. 
+                        Finally, we introduce metrics aimed at assessing conversational AI on an individual level and how they contrast with the more traditional automatic dialog metrics.
+                    </p>
+                    <p>
+                        <b>Presenters:</b> João Sedoc, Nikita Soni
+                    </p>
+                    <p>
+                        <b>Materials:</b> <a href="">Slides</a>
+                    </p>
 
-    <!-- This should contain a small picture from the assets folder displayed within a circle, along with their name which is hyperlinked to their personal website-->
-    <h2 id="people">People</h2>
-    <p>This tutorial is brought to you by the following people:</p>
+                    <h2 id="session4">Group Context in NLP</h2>
+                    <p>
+                        We will go over the methods that place emphasis on treating individuals and groups as interactive entities, with the individual's interactions within a group adding context to documents. 
+                        Drawing inspiration from adjacent fields, particularly computational social science, we will show how to analyze the language of user-associated groups, unveil valuable insights into the context of an individual, the evolving dynamics of group language usage over time, and its influence on individual language patterns. 
+                        By incorporating code demonstrations and references, we will discuss how these methods can enrich multiple traditional NLP tasks.
+                    </p>
+                    <p>
+                        <b>Presenters:</b> Ryan L. Boyd, Vasudha Varadarajan
+                    </p>
+                    <p>
+                        <b>Materials:</b> <a href="">Slides</a>
+                    </p>
 
-    <div>
-        <img src="assets/people/sgiorgi.jpg" alt="presenter-sal" style="width:100px;height:100px;border-radius:50%;">
-        <a href="https://sjgiorgi.github.io/">Salvatore Giorgi</a>
-    </div>
+                    <h2 id="session5">Community Context in NLP</h2>
+                    <p>
+                        This tutorial session will cover the basics of creating language estimates of spatial communities (e.g., U.S. states or provinces in China). 
+                        We will cover topics such as aggregation, as in how to move from documents to communities \emph{through} people, selection biases, ecological fallacies (i.e., language patterns at the individual level do not always hold at the community level), and cultural considerations. 
+                        Participants in this session will be provided with a code notebook to experiment with on their own to examine the gains from proper methods for handling community-level text.
+                    </p>
+                    <p>
+                        <b>Presenters:</b> Salvatore Giorgi, Siddharth Mangalik
+                    </p>
+                    <p>
+                        <b>Materials:</b> <a href="">Slides</a>
+                    </p>
+                    <h2 id="session6">Closing Note</h2>
+                    We will end the tutorial by briefly summarizing the topics covered across all the sessions, distinguishing the situations for which methods are appropriate, concluding with a perspective on the future of human-centered NLP.
+                    <p>
+                        <b>Presenters:</b> H. Andrew Schwartz
+                    </p>
 
-    <div>
-        <img src="assets/people/jsedoc.jpg" alt="presenter-joao" style="width:100px;height:100px;border-radius:50%;">
-        <a href="https://www.stern.nyu.edu/faculty/bio/joao-sedoc">João Sedoc</a>
-    </div>
+                    <h2>People</h2>
+                    <!-- Include Image in a standard size within a circle of set radius, along with their name (hyperlinked) and their affiliation in the bottom of their pictures -->
 
-    <div>
-        <img src="assets/people/hschwartz.jpg" alt="presenter-andy" style="width:100px;height:100px;border-radius:50%;">
-        <a href="https://www3.cs.stonybrook.edu/~has">H. Andrew Schwartz</a>
-    </div>
+                    <div>
+                        <img src="assets/people/sgiorgi.jpg" alt="presenter-sal" style="width:100px;height:100px;border-radius:50%;">
+                        <a href="https://sjgiorgi.github.io/">Salvatore Giorgi</a>
+                    </div>
 
-    <div>
-        <img src="assets/people/rboyd.jpg" alt="presenter-ryan" style="width:100px;height:100px;border-radius:50%;">
-        <a href="https://www.ryanboyd.io/">Ryan L Boyd</a>
-    </div>
+                    <div>
+                        <img src="assets/people/jsedoc.jpg" alt="presenter-joao" style="width:100px;height:100px;border-radius:50%;">
+                        <a href="https://www.stern.nyu.edu/faculty/bio/joao-sedoc">João Sedoc</a>
+                    </div>
 
-    <div>
-        <img src="assets/people/aganesan.jpg" alt="presenter-adi" style="width:100px;height:100px;border-radius:50%;">
-        <a href="https://adithya8.github.io">Adithya V Ganesan</a>
-    </div>
+                    <div>
+                        <img src="assets/people/hschwartz.jpg" alt="presenter-andy" style="width:100px;height:100px;border-radius:50%;">
+                        <a href="https://www3.cs.stonybrook.edu/~has">H. Andrew Schwartz</a>
+                    </div>
 
-    <div>
-        <img src="assets/people/smangalik.jpg" alt="presenter-sid" style="width:100px;height:100px;border-radius:50%;">
-        <a href="https://smangalik.github.io/">Siddharth Mangalik</a>
-    </div>
+                    <div>
+                        <img src="assets/people/rboyd.jpg" alt="presenter-ryan" style="width:100px;height:100px;border-radius:50%;">
+                        <a href="https://www.ryanboyd.io/">Ryan L Boyd</a>
+                    </div>
 
-    <div>
-        <img src="assets/people/vvaradarajan.jpg" alt="presenter-vasudha" style="width:100px;height:100px;border-radius:50%;">
-        <a href="https://vasevarad.github.io/">Vasudha Varadarajan</a>
-    </div>
+                    <div>
+                        <img src="assets/people/aganesan.jpg" alt="presenter-adi" style="width:100px;height:100px;border-radius:50%;">
+                        <a href="https://adithya8.github.io">Adithya V Ganesan</a>
+                    </div>
 
-    <div>
-        <img src="assets/people/nsoni.jpg" alt="presenter-nikita" style="width:100px;height:100px;border-radius:50%;">
-        <a href="https://www3.cs.stonybrook.edu/~nisoni/">Nikita Soni</a>
-    </div>
+                    <div>
+                        <img src="assets/people/smangalik.jpg" alt="presenter-sid" style="width:100px;height:100px;border-radius:50%;">
+                        <a href="https://smangalik.github.io/">Siddharth Mangalik</a>
+                    </div>
 
-    <div>
-        <img src="assets/people/sjuhng.jpg" alt="presenter-swanie" style="width:100px;height:100px;border-radius:50%;">
-        <a href="https://swaniejuhng.github.io/">Swanie Juhng</a>
-    </div>
-          
-</body>
+                    <div>
+                        <img src="assets/people/vvaradarajan.jpg" alt="presenter-vasudha" style="width:100px;height:100px;border-radius:50%;">
+                        <a href="https://vasevarad.github.io/">Vasudha Varadarajan</a>
+                    </div>
 
+                    <div>
+                        <img src="assets/people/nsoni.jpg" alt="presenter-nikita" style="width:100px;height:100px;border-radius:50%;">
+                        <a href="https://www3.cs.stonybrook.edu/~nisoni/">Nikita Soni</a>
+                    </div>
+
+                    <div>
+                        <img src="assets/people/sjuhng.jpg" alt="presenter-swanie" style="width:100px;height:100px;border-radius:50%;">
+                        <a href="https://swaniejuhng.github.io/">Swanie Juhng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
 </html>
